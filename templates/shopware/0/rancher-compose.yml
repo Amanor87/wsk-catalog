@@ -37,8 +37,14 @@ catalog:
        default: "/volumes/SHOP/database"
        type: "string"
      - variable: LOCAL_SITE
-       description: "Loakaler Pfad für die Webseite"
+       description: "Lokaler Pfad für die Webseite"
        label: "Speicherort der Webseite"
        required: true
        default: "/volumes/SHOP/live"
+       type: "string"
+     - variable: HOST_LABEL
+       description: "Labelangabe um den Host festzulegen"
+       label: "Labelangabe um den Host festzulegen"
+       required: true
+       default: "wsk.kunde=kunde1"
        type: "string"

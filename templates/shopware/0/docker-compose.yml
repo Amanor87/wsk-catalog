@@ -8,6 +8,7 @@ services:
     - Datenbank:mysql
     labels:
       io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: ${HOST_LABEL}
   Datenbank:
     image: mysql:latest
     environment:
@@ -21,6 +22,7 @@ services:
     tty: true
     labels:
       io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: ${HOST_LABEL}
   PHPMyAdmin:
       image: phpmyadmin/phpmyadmin
       stdin_open: true
@@ -29,3 +31,4 @@ services:
       - Datenbank:db
       labels:
         io.rancher.container.pull_image: always
+        io.rancher.scheduler.affinity:host_label: ${HOST_LABEL}
