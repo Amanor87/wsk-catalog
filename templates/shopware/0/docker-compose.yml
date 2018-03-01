@@ -1,0 +1,33 @@
+version: '2'
+services:
+  Shop:
+    image: amanor/shopware
+    volumes:
+    - /volumes/mbertram/developer:/var/www/html
+    links:
+    - Datenbank:mysql
+    labels:
+      io.rancher.container.pull_image: always
+  Datenbank:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    stdin_open: true
+    volumes:
+    - /volumes/mbertram/database:/var/lib/mysql
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+  PHPMyAdmin:
+      image: phpmyadmin/phpmyadmin
+      stdin_open: true
+      tty: true
+      links:
+      - Datenbank:db
+      ports:
+      - 5634:80/tcp
+      labels:
+        io.rancher.container.pull_image: always

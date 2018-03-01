@@ -1,7 +1,32 @@
-.catalog:
+version: '2'
+catalog:
   name: Shopware
   version: 0.0.1
   description: Shopware Stack with Database and PHPMyAdmin
   uuid: # Unique identifier to be used for upgrades. Please see note.
   minimum_rancher_version: # The minimum version of Rancher that supports the template
   questions: #Used to request user input for configuration options
+     - variable: MYSQL_ROOT_PASSWORD
+       description: "Password für root"
+       label: "MySQL Root Passwort"
+       required: true
+       default: "123456"
+       type: "string"
+     - variable: MYSQL_DATABASE
+       description: "Diese Datenbank wird initial erstellt"
+       label: "MySQL Database"
+       required: true
+       default: "shopware"
+       type: "string"
+     - variable: MYSQL_USER
+       description: "Standardnutzer der angelegt wird"
+       label: "MySQL Benutzer"
+       required: true
+       default: "shopware"
+       type: "string"
+     - variable: MYSQL_PASSWORD
+       description: "Passwort für den Standardnutzer"
+       label: "MySQL Benutzer Passwort"
+       required: true
+       default: "shopware"
+       type: "string"
