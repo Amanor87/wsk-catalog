@@ -30,3 +30,15 @@ catalog:
        required: true
        default: "shopware"
        type: "string"
+     - variable: LOCAL_MYSQL
+       description: "Loakaler Pfad für die Datenbankdaten"
+       label: "Speicherort der Datenbank"
+       required: true
+       default: "/volumes/SHOP/database"
+       type: "string"
+     - variable: LOCAL_SITE
+       description: "Loakaler Pfad für die Webseite"
+       label: "Speicherort der Webseite"
+       required: true
+       default: "/volumes/SHOP/live"
+       type: "string"

@@ -3,7 +3,7 @@ services:
   Shop:
     image: amanor/shopware
     volumes:
-    - /volumes/mbertram/developer:/var/www/html
+    - ${LOCAL_SITE}:/var/www/html
     links:
     - Datenbank:mysql
     labels:
@@ -17,7 +17,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     stdin_open: true
     volumes:
-    - /volumes/mbertram/database:/var/lib/mysql
+    - ${LOCAL_MYSQL}:/var/lib/mysql
     tty: true
     labels:
       io.rancher.container.pull_image: always
@@ -27,7 +27,5 @@ services:
       tty: true
       links:
       - Datenbank:db
-      ports:
-      - 5634:80/tcp
       labels:
         io.rancher.container.pull_image: always
