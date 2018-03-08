@@ -1,0 +1,8 @@
+name: Shopcontainer PHP5
+description: |
+  Apache Stack mit php5 mysql und phpmyadmin
+version: 0.0.1
+category: wsk
+maintainer: pw@web-service-kaupa.de
+license: # The license
+projectURL: # A URL related to the catalog entry

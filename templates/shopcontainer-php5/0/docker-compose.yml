@@ -1,0 +1,34 @@
+version: '2'
+services:
+  Shop:
+    image: amanor/shopcontainer-php5
+    volumes:
+    - ${LOCAL_SITE}:/var/www/html
+    links:
+    - Datenbank:mysql
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: ${HOST_LABEL}
+  Datenbank:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    stdin_open: true
+    volumes:
+    - ${LOCAL_MYSQL}:/var/lib/mysql
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: ${HOST_LABEL}
+  PHPMyAdmin:
+      image: phpmyadmin/phpmyadmin
+      stdin_open: true
+      tty: true
+      links:
+      - Datenbank:db
+      labels:
+        io.rancher.container.pull_image: always
+        io.rancher.scheduler.affinity:host_label: ${HOST_LABEL}

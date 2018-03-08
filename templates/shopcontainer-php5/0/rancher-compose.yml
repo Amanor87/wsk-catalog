@@ -1,0 +1,50 @@
+version: '2'
+catalog:
+  name: Shopcontainer PHP5
+  version: 0.0.1
+  description: Apache Stack mit php5 mysql und phpmyadmin
+  uuid: # Unique identifier to be used for upgrades. Please see note.
+  minimum_rancher_version: # The minimum version of Rancher that supports the template
+  questions: #Used to request user input for configuration options
+     - variable: MYSQL_ROOT_PASSWORD
+       description: "Password für root"
+       label: "MySQL Root Passwort"
+       required: true
+       default: "123456"
+       type: "string"
+     - variable: MYSQL_DATABASE
+       description: "Diese Datenbank wird initial erstellt"
+       label: "MySQL Database"
+       required: true
+       default: "shop"
+       type: "string"
+     - variable: MYSQL_USER
+       description: "Standardnutzer der angelegt wird"
+       label: "MySQL Benutzer"
+       required: true
+       default: "shop"
+       type: "string"
+     - variable: MYSQL_PASSWORD
+       description: "Passwort für den Standardnutzer"
+       label: "MySQL Benutzer Passwort"
+       required: true
+       default: "shop"
+       type: "string"
+     - variable: LOCAL_MYSQL
+       description: "Lokaler Pfad für die Datenbankdaten"
+       label: "Speicherort der Datenbank"
+       required: true
+       default: "/home/rancher/volumes/SHOP/database"
+       type: "string"
+     - variable: LOCAL_SITE
+       description: "Lokaler Pfad für die Webseite"
+       label: "Speicherort der Webseite"
+       required: true
+       default: "/home/rancher/volumes/SHOP/live"
+       type: "string"
+     - variable: HOST_LABEL
+       description: "Labelangabe um den Host festzulegen"
+       label: "Labelangabe um den Host festzulegen"
+       required: true
+       default: "wsk.kunde=kunde1"
+       type: "string"
