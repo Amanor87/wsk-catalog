@@ -1,7 +1,7 @@
 version: '2'
 catalog:
   name: Shopcontainer PHP5
-  version: 0.0.1
+  version: 0.0.2
   description: Apache Stack mit php5 mysql und phpmyadmin
   uuid: # Unique identifier to be used for upgrades. Please see note.
   minimum_rancher_version: # The minimum version of Rancher that supports the template
