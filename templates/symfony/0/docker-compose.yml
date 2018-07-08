@@ -1,6 +1,6 @@
 version: '2'
 services:
-  Shop:
+  Website:
     image: amanor/symfonycontainer
     volumes:
     - ${LOCAL_SITE}:/var/www/html
