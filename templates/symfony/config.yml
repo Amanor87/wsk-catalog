@@ -1,0 +1,8 @@
+name: Symfony
+description: |
+  Symfonystack mit Symfony4, Bootstrap 4, Webpack und yarn
+version: 1.0
+category: wsk
+maintainer: pw@web-service-kaupa.de
+license: # The license
+projectURL: # A URL related to the catalog entry

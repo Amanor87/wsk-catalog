@@ -1,0 +1,9 @@
+version: '2'
+services:
+  Shop:
+    image: amanor/symfonycontainer
+    volumes:
+    - ${LOCAL_SITE}:/var/www/html
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: ${HOST_LABEL}

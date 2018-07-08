@@ -1,0 +1,20 @@
+version: '2'
+catalog:
+  name: Symfony
+  version: 1.0
+  description: Symfonystack mit Symfony4, Bootstrap 4, Webpack und yarn
+  uuid: # Unique identifier to be used for upgrades. Please see note.
+  minimum_rancher_version: # The minimum version of Rancher that supports the template
+  questions: #Used to request user input for configuration options
+     - variable: LOCAL_SITE
+       description: "Lokaler Pfad für die Webseite"
+       label: "Speicherort der Webseite"
+       required: true
+       default: "/home/rancher/volumes/SITE/live"
+       type: "string"
+     - variable: HOST_LABEL
+       description: "Labelangabe um den Host festzulegen"
+       label: "Labelangabe um den Host festzulegen"
+       required: true
+       default: "wsk.kunde=kunde1"
+       type: "string"
